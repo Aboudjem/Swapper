@@ -12,4 +12,4 @@ Each token has its own unique name and symbol. Tokens may all have the same numb
 
 
 ## Development Environment
-- Hardhat: https://github.com/ava-labs/avalanche-smart-contract-quickstart
+- Hardhat: https://hardhat.org/getting-started/
