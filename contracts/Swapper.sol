@@ -1,10 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.6;;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./Token.sol";
-
-pragma solidity ^0.8.6;
 
 contract Swapper {
     IERC20 public tokenA;
