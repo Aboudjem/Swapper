@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.6;;
+pragma solidity =0.8.17;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./Token.sol";
@@ -81,16 +81,8 @@ contract Swapper {
      */
     function _swap(address token_, uint256 amount) private {
         require(
-            (IERC20(token_).allowance(msg.sender, address(this)) >= amount),
-            "ERC20: transfer amount exceeds allowance"
-        );
-        require(
-            tokenC.balanceOf(address(this)) >= amount,
-            "ERC20: transfer amount exceeds balance"
-        );
-        require(
             IERC20(token_).transferFrom(msg.sender, address(this), amount),
-            "ERC20: Error"
+            "ERC20: Error on transfer"
         );
         require(tokenC.transfer(msg.sender, amount), "Error");
     }
@@ -103,17 +95,9 @@ contract Swapper {
      */
     function _unswap(address token_, uint256 amount) private {
         require(
-            (tokenC.allowance(msg.sender, address(this)) >= amount),
-            "ERC20: transfer amount exceeds allowance"
-        );
-        require(
-            IERC20(token_).balanceOf(address(this)) >= amount,
-            "ERC20: transfer amount exceeds balance"
-        );
-        require(
             tokenC.transferFrom(msg.sender, address(this), amount),
-            "ERC20: Error"
+            "ERC20: Error on transfer"
         );
-        require(IERC20(token_).transfer(msg.sender, amount), "Error");
+        require(IERC20(token_).transfer(msg.sender, amount), "ERC20: Error on transfer");
     }
 }
