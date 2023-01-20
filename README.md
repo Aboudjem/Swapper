@@ -9,9 +9,6 @@ This is a Solidity smart contract that allows for the swapping of tokens A, B, a
 ## Provided Stub
 Attached is a Solidity stub for the Wrapper contract. It contains two methods: `function swap(address token_, uint amount)` and `function unswap(address token_, uint amount)`. Please implement these methods. Feel free to add whatever other methods and contracts are necessary.
 
-
-
-
 ## Getting Started
 
 To use this contract, you will need a wallet that is compatible with the ERC20 standard and can interact with the Ethereum blockchain. You will also need to deploy the contract to the blockchain, either through a platform like [Remix](https://remix.ethereum.org/) or through a deployment script.
