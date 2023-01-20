@@ -81,14 +81,6 @@ contract Swapper {
      */
     function _swap(address token_, uint256 amount) private {
         require(
-            (IERC20(token_).allowance(msg.sender, address(this)) >= amount),
-            "ERC20: transfer amount exceeds allowance"
-        );
-        require(
-            tokenC.balanceOf(address(this)) >= amount,
-            "ERC20: transfer amount exceeds balance"
-        );
-        require(
             IERC20(token_).transferFrom(msg.sender, address(this), amount),
             "ERC20: Error"
         );
